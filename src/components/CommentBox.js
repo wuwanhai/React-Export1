@@ -15,10 +15,14 @@ class CommentBox extends React.Component {
     };
 
     handleSubmit = event => {
-        alert(this.state.value);
+        this.props.onAddComment(this.state.value);
         event.preventDefault();
-    }
+        this.setState({
+            value:''
+        })
+    };
     render() {
+
         return (
             <form className='p-5'>
                 <div className='form-group'>
